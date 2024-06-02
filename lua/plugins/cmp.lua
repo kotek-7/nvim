@@ -8,7 +8,7 @@ return {
     { "hrsh7th/cmp-cmdline" },
     { "L3MON4D3/LuaSnip" },
   },
-  config = function ()
+  config = function()
     local cmp = require("cmp")
     cmp.setup({
       snippet = {
