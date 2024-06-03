@@ -21,3 +21,5 @@ vim.opt.shiftwidth = 0
 -- nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.cmd("lan en_us")
