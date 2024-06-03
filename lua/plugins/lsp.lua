@@ -14,17 +14,17 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("lsp-attach", {}),
         callback = function(event)
-          local map = function(keys, func, desc)
-            vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-          end
-          map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
-          map("gr", require("telescope.builtin").lsp_references, "Goto References")
-          map("gi", require("telescope.builtin").lsp_implementations, "Goto Implementation")
-          map("gr", vim.lsp.buf.references, "Goto References")
-          map("K", vim.lsp.buf.hover, "Hover Documentation")
-          map("<leader>cf", function()
+          vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<CR>', { buffer = event.buf, desc = "Goto Definition" })
+          vim.keymap.set('n', 'gD', '<cmd>Lspsaga peek_type_definition<CR>',
+            { buffer = event.buf, desc = "Goto Type Declaration" })
+          vim.keymap.set('n', 'gi', require("telescope.builtin").lsp_implementations,
+            { buffer = event.buf, desc = "Goto Implementation" })
+          vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { buffer = event.buf, desc = 'Hover Documentation' })
+          vim.keymap.set('n', '<leader>cd', function()
             vim.lsp.buf.format({ async = true })
-          end, "Code Format")
+          end, { buffer = event.buf, desc = 'Code Format' })
+          vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', { buffer = event.buf, desc = 'Code Action' })
+          vim.keymap.set('n', '<leader>cr', '<cmd>Lspsaga rename<CR>', { buffer = event.buf, desc = 'Rename' })
         end,
       })
 
@@ -69,6 +69,10 @@ return {
   },
   {
     "nvimdev/lspsaga.nvim",
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
     opts = {},
   },
 }
