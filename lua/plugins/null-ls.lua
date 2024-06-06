@@ -20,6 +20,7 @@ return {
         null_ls.builtins.formatting.prettier.with({
           prefer_local = "node_modules/.bin",
         }),
+        null_ls.builtins.formatting.stylua,
       },
       on_attach = function(client, bufnr)
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

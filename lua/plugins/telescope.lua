@@ -18,5 +18,14 @@ return {
       builtin.colorscheme { enable_preview = true }
     end, {})
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
+    require('telescope').setup {
+      defaults = {
+        file_ignore_patterns = {
+          "node_modules",
+          "target",
+          ".git"
+        }
+      }
+    }
   end,
 }

@@ -14,13 +14,14 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("lsp-attach", {}),
         callback = function(event)
+          vim.keymap.set('n', '<leader>cd', '<cmd>Lspsaga diagnostic_jump_next<CR>', { buffer = event.buf, desc = "Show diagnostic"})
           vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<CR>', { buffer = event.buf, desc = "Goto Definition" })
           vim.keymap.set('n', 'gD', '<cmd>Lspsaga peek_type_definition<CR>',
             { buffer = event.buf, desc = "Goto Type Declaration" })
           vim.keymap.set('n', 'gi', require("telescope.builtin").lsp_implementations,
             { buffer = event.buf, desc = "Goto Implementation" })
           vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { buffer = event.buf, desc = 'Hover Documentation' })
-          vim.keymap.set('n', '<leader>cd', function()
+          vim.keymap.set('n', '<leader>cf', function()
             vim.lsp.buf.format({ async = true })
           end, { buffer = event.buf, desc = 'Code Format' })
           vim.keymap.set('n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', { buffer = event.buf, desc = 'Code Action' })
@@ -39,6 +40,7 @@ return {
           "cssls",
           "tailwindcss",
           "rust_analyzer",
+          "eslint"
         },
       })
       require("mason-lspconfig").setup_handlers({
