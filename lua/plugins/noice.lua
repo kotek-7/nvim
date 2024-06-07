@@ -38,7 +38,7 @@ return {
     {
       "rcarriga/nvim-notify",
       opts = {
-        max_width = 40
+        max_width = 80
       }
     },
   }
