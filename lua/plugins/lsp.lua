@@ -67,6 +67,15 @@ return {
             },
           })
         end,
+        ["arduino_language_server"] = function()
+          require("lspconfig").arduino_language_server.setup({
+            cmd = {
+              "arduino-language-server",
+              "-cli-config",
+              '"C:/Users/kotek/AppData/Local/Arduino15/arduino-cli.yaml"',
+            }
+          })
+        end,
       })
     end,
   },

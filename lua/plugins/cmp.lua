@@ -76,11 +76,11 @@ return {
 
       }),
       sources = cmp.config.sources {
-        { name = "copilot" },
         { name = 'luasnip' },
-        { name = 'buffer' },
         { name = 'nvim_lsp' },
         { name = 'path' },
+        { name = 'buffer' },
+        { name = "copilot" },
       },
     })
 
