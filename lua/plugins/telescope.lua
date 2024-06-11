@@ -14,7 +14,11 @@ return {
   },
   config = function()
     local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader><leader>', "<cmd>Telescope frecency<cr>", { desc = "Find file frecency" })
+    vim.keymap.set("n", "<leader><leader>", function()
+      require("telescope").extensions.frecency.frecency {
+        workspace = "CWD"
+      }
+    end)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
     vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
