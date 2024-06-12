@@ -16,6 +16,8 @@ vim.keymap.set('n', '<C-Right>', '<C-w>>')
 vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 
+vim.keymap.set("n", "<c-q>", "<cmd>q<cr>", { desc = "Quit Window" })
+
 -- Move Lines
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
