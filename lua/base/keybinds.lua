@@ -40,7 +40,7 @@ vim.keymap.set('n', '<S-l>', ':bnext<CR>', { silent = true })
 vim.keymap.set('n', '<S-h>', ':bprev<CR>', { silent = true })
 
 -- remove buffer
-vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { desc = "Delete buffer" })
+vim.keymap.set('n', '<A-w>', '<cmd>bd<cr>', { desc = "Delete buffer" })
 -- key swap
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')
