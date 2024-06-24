@@ -21,6 +21,7 @@ return {
     local luasnip = require("luasnip")
 
     cmp.setup({
+      preselect = cmp.PreselectMode.None,
       formatting = {
         format = require("lspkind").cmp_format {
           mode = "symbol",
@@ -45,9 +46,7 @@ return {
             if luasnip.expandable() then
               luasnip.expand()
             else
-              cmp.confirm({
-                select = true,
-              })
+              cmp.confirm();
             end
           else
             fallback()

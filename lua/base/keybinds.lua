@@ -40,7 +40,7 @@ vim.keymap.set('n', '<S-l>', ':bnext<CR>', { silent = true })
 vim.keymap.set('n', '<S-h>', ':bprev<CR>', { silent = true })
 
 -- remove buffer
-vim.keymap.set('n', '<A-w>', '<cmd>bd<cr>', { desc = "Delete buffer" })
+vim.keymap.set('n', '<A-w>', '<cmd>NvimTreeClose<cr><cmd>bd<cr>', { desc = "Delete buffer" })
 -- key swap
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')
@@ -65,7 +65,7 @@ vim.keymap.set('n', '<leader><S-o>', '<S-o><esc>')
 vim.keymap.set('n', '<C-z>', '<NOP>')
 
 -- 保存
-vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><cmd>NvimTreeClose<cr><cmd>mks!<cr>", { desc = "Save File" })
 vim.keymap.set('n', '<leader>qq', '<cmd>qa<CR>', { desc = "Quit All" })
 
 -- 設定を開く
