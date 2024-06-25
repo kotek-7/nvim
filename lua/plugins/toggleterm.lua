@@ -8,7 +8,7 @@ return {
       lazygit:toggle()
     end
 
-    vim.keymap.set('n', '<leader>g', lazygit_toggle, { desc = "Toggle lazygit" })
+    vim.keymap.set('n', '<leader>gg', lazygit_toggle, { desc = "Toggle lazygit" })
 
     require("toggleterm").setup {
       open_mapping = [[<C-\>]],

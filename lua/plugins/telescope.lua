@@ -6,6 +6,17 @@ return {
     'nvim-telescope/telescope-fzf-native.nvim',
     'sharkdp/fd',
     {
+      "danielfalk/smart-open.nvim",
+      branch = "0.2.x",
+      config = function()
+        require("telescope").load_extension("smart_open")
+      end,
+      dependencies = {
+        "kkharji/sqlite.lua",
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      },
+    },
+    {
       "nvim-telescope/telescope-frecency.nvim",
       config = function()
         require("telescope").load_extension("frecency")
@@ -16,9 +27,7 @@ return {
     local builtin = require('telescope.builtin')
     vim.keymap.set("n", "<leader><leader>", builtin.find_files, { desc = "Find Files" })
     vim.keymap.set("n", "<leader>ff", function()
-      require("telescope").extensions.frecency.frecency {
-        workspace = "CWD"
-      }
+      require("telescope").extensions.frecency.frecency {}
     end)
     vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Live Grep" })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Find from Buffers" })

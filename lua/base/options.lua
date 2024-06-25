@@ -23,4 +23,10 @@ vim.opt.shiftwidth = 2
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.sqlite_clib_path = "sqlite3.dll"
+
+vim.diagnostic.config({
+  underline = true
+})
+
 vim.cmd("lan en_us")
