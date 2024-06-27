@@ -19,7 +19,7 @@ return {
           vim.keymap.set('n', '[d', "<cmd>Lspsaga diagnostic_jump_prev<cr>", { buffer = event.buf, desc = "Prev Diagnostic"})
           vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<CR>', { buffer = event.buf, desc = "Goto Definition" })
           vim.keymap.set('n', 'gD', '<cmd>Lspsaga peek_type_definition<CR>', { buffer = event.buf, desc = "Goto Type Declaration" })
-          vim.keymap.set('n', 'gr', '<cmd>Lspsaga lsp_finder<CR>', { buffer = event.buf, desc = "Goto Reference" })
+          vim.keymap.set('n', 'gr', '<cmd>Lspsaga finder<CR>', { buffer = event.buf, desc = "Goto Reference" })
           vim.keymap.set('n', 'gi', require("telescope.builtin").lsp_implementations, { buffer = event.buf, desc = "Goto Implementation" })
           vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { buffer = event.buf, desc = 'Hover Documentation' })
           vim.keymap.set('n', '<leader>cf', function() vim.lsp.buf.format({ async = true }) end, { buffer = event.buf, desc = 'Code Format' })
