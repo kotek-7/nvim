@@ -12,6 +12,7 @@ return {
       hijack_cursor = true,
       disable_netrw = true,
       sync_root_with_cwd = true,
+      respect_buf_cwd = true,
       reload_on_bufenter = true,
       renderer = {
         icons = {
@@ -22,6 +23,7 @@ return {
       },
       update_focused_file = {
         enable = true,
+        update_root = true,
       },
       diagnostics = {
         enable = true,

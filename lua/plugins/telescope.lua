@@ -22,6 +22,12 @@ return {
         require("telescope").load_extension("frecency")
       end,
     },
+    {
+      "ahmedkhalf/project.nvim",
+      config = function ()
+        require('telescope').load_extension('projects')
+      end
+    }
   },
   config = function()
     local builtin = require('telescope.builtin')
@@ -37,6 +43,7 @@ return {
       builtin.colorscheme { enable_preview = true }
     end, { desc = "Find Colorschemes" })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = "Find Keymaps" })
+    vim.keymap.set("n", "<leader>fp", require("telescope").extensions.projects.projects, { desc = "Find Projects"})
     require('telescope').setup {
       defaults = {
         file_ignore_patterns = {
@@ -49,7 +56,7 @@ return {
         ---@type FrecencyOpts
         frecency = {
           matcher = "fuzzy",
-        }
+        },
       }
     }
   end,

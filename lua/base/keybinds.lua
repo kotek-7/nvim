@@ -18,6 +18,8 @@ vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap 
 
 vim.keymap.set("n", "<c-q>", "<cmd>q<cr>", { desc = "Quit Window" })
 
+vim.keymap.set("n", "<leader>sl", "<cmd>so Session.vim<cr>")
+
 -- Move Lines
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
 vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
@@ -41,6 +43,7 @@ vim.keymap.set('n', '<S-h>', ':bprev<CR>', { silent = true })
 
 -- remove buffer
 vim.keymap.set('n', '<A-w>', '<cmd>NvimTreeClose<cr><cmd>bd<cr>', { desc = "Delete buffer" })
+
 -- key swap
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')

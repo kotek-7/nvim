@@ -1,17 +1,11 @@
 return {
-  {
-    "navarasu/onedark.nvim",
-    config = function()
-      require('onedark').load()
-    end,
-    priority = 1000
-  },
+  { "navarasu/onedark.nvim", priority = 1000 },
   { "folke/tokyonight.nvim", priority = 1000},
   { "rebelot/kanagawa.nvim", priority = 1000 },
   { "catppuccin/nvim", priority = 1000, name = "catppuccin", },
   { "ellisonleao/gruvbox.nvim", priority = 1000, opts = {} },
   { 'kepano/flexoki-neovim', priority = 1000, name = 'flexoki', },
-  { "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
+  { "nyoom-engineering/oxocarbon.nvim", priority = 1000, config = function () vim.cmd("colorscheme oxocarbon") end },
   { 'AlexvZyl/nordic.nvim', priority = 1000 },
   { "scottmckendry/cyberdream.nvim", priority = 1000, opts = { italic_comments = true, } },
   { "baliestri/aura-theme", priority = 1000, },
