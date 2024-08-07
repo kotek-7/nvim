@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap 
 
 vim.keymap.set("n", "<c-q>", "<cmd>q<cr>", { desc = "Quit Window" })
 
-vim.keymap.set("n", "<leader>sl", "<cmd>so Session.vim<cr>")
+vim.keymap.set("n", "<leader>sl", "<cmd>so Session.vim<cr>", { desc = "Load Last Session" })
 
 -- Move Lines
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
