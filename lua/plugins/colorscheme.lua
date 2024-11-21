@@ -1,8 +1,8 @@
 return {
   { "navarasu/onedark.nvim", priority = 1000 },
-  { "folke/tokyonight.nvim", priority = 1000, config = function () vim.cmd("colorscheme tokyonight-night") end },
+  { "folke/tokyonight.nvim", priority = 1000 },
   { "rebelot/kanagawa.nvim", priority = 1000 },
-  { "catppuccin/nvim", priority = 1000, name = "catppuccin", },
+  { "catppuccin/nvim", priority = 1000, name = "catppuccin", config = function () vim.cmd("colorscheme catppuccin-macchiato") end },
   { "ellisonleao/gruvbox.nvim", priority = 1000, opts = {} },
   { 'kepano/flexoki-neovim', priority = 1000, name = 'flexoki', },
   { "nyoom-engineering/oxocarbon.nvim", priority = 1000, },
