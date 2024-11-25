@@ -13,10 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +4 lua/plugins/tree-sitter.lua
+badd +7 lua/plugins/fidget.lua
 argglobal
 %argdel
-edit lua/plugins/tree-sitter.lua
+edit lua/plugins/fidget.lua
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -28,12 +28,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 18) / 36)
+let s:l = 7 - ((6 * winheight(0) + 21) / 42)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
-normal! 015|
+keepjumps 7
+normal! 020|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
