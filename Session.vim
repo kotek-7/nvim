@@ -13,16 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +30 ~/AppData/Local/nvim/lua/plugins/cmp.lua
-badd +2 ~/AppData/Local/nvim/lua/plugins/colorscheme.lua
-badd +3 ~/AppData/Local/nvim/lua/plugins/comment.lua
-badd +4 ~/AppData/Local/nvim/lua/plugins/copilot.lua
-badd +4 ~/AppData/Local/nvim/lua/plugins/dressing.lua
+badd +4 lua/plugins/tree-sitter.lua
 argglobal
 %argdel
-edit ~/AppData/Local/nvim/lua/plugins/dressing.lua
+edit lua/plugins/tree-sitter.lua
 argglobal
-balt ~/AppData/Local/nvim/lua/plugins/copilot.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -33,12 +28,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 18) / 36)
+let s:l = 14 - ((13 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
-normal! 0
+keepjumps 14
+normal! 015|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

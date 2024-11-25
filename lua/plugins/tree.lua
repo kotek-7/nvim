@@ -1,9 +1,9 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  lazy = true,
   version = "*",
-  lazy = false,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
+  keys = {
+    { "<leader>e", mode = "n"},
   },
   config = function()
     vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>')

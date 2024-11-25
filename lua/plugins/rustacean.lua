@@ -1,5 +1,7 @@
 return {
   'mrcjkb/rustaceanvim',
+  lazy = true,
+  event = "LspAttach",
   version = '^4', -- Recommended
   ft = { "rust" },
   opts = {
@@ -25,7 +27,7 @@ return {
             command = "clippy",
             extraArgs = { "--no-deps" },
           },
-          procMacro = {
+procMacro = {
             enable = true,
             ignored = {
               ["async-trait"] = { "async_trait" },

@@ -1,5 +1,11 @@
 return {
   'kevinhwang91/nvim-hlslens',
+  lazy = true,
+  keys = {
+    { "?", mode = "n" },
+    { ":", mode = "n" },
+  },
+  cond = false,
   config = function()
     require('hlslens').setup()
 

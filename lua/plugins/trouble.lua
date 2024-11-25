@@ -1,6 +1,6 @@
 return {
   "folke/trouble.nvim",
-
+  lazy = true,
   opts = {
     auto_close = true,
     auto_open = true,

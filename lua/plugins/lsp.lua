@@ -1,15 +1,10 @@
 return {
+  { "williamboman/mason.nvim", lazy = true },
+  { "neovim/nvim-lspconfig", lazy = true },
   {
     "williamboman/mason-lspconfig.nvim",
-
-    dependencies = {
-      "williamboman/mason.nvim",
-      "neovim/nvim-lspconfig",
-      "hrsh7th/cmp-nvim-lsp",
-    },
-
+    lazy = true,
     event = { "BufReadPre", "BufNewFile" },
-
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("lsp-attach", {}),
@@ -126,10 +121,6 @@ return {
   },
   {
     "nvimdev/lspsaga.nvim",
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons',
-    },
     opts = {},
   },
 }

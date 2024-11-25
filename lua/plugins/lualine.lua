@@ -38,9 +38,9 @@ local function is_available_lspsaga()
 end
 
 return {
-  { 'nvim-tree/nvim-web-devicons', lazy = true },
   {
     'nvim-lualine/lualine.nvim',
+    lazy = true,
     event = "VimEnter",
     priority = 800,
     opts = {

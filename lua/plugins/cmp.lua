@@ -1,12 +1,11 @@
 return {
-  { "neovim/nvim-lspconfig", lazy = true },
-  { "hrsh7th/cmp-nvim-lsp", lazy = true },
-  { "hrsh7th/cmp-buffer", lazy = true },
-  { "hrsh7th/cmp-path", lazy = true },
-  { "hrsh7th/cmp-cmdline", lazy = true },
-  { "saadparwaiz1/cmp_luasnip", lazy = true },
-  { "L3MON4D3/LuaSnip", lazy = true },
-  { "onsails/lspkind-nvim", lazy = true },
+  { "hrsh7th/cmp-nvim-lsp", lazy = true, event = { "InsertEnter", "CmdlineEnter" }  },
+  { "hrsh7th/cmp-buffer", lazy = true, event = { "InsertEnter", "CmdlineEnter" }  },
+  { "hrsh7th/cmp-path", lazy = true, event = { "InsertEnter", "CmdlineEnter" } },
+  { "hrsh7th/cmp-cmdline", lazy = true, event = { "InsertEnter", "CmdlineEnter" } },
+  { "saadparwaiz1/cmp_luasnip", lazy = true, event = { "InsertEnter", "CmdlineEnter" } },
+  { "L3MON4D3/LuaSnip", lazy = true, event = { "InsertEnter", "CmdlineEnter" } },
+  { "onsails/lspkind-nvim", lazy = true, event = { "InsertEnter", "CmdlineEnter" } },
   {
     "zbirenbaum/copilot-cmp",
     lazy = true,
@@ -16,7 +15,8 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    lazy = true,
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
