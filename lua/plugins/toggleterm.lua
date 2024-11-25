@@ -4,6 +4,7 @@ return {
   version = "*",
   keys = {
     { "<leader>gg", mode = "n" },
+    { "<c-\\>", mode = "n" },
   },
   config = function()
     local Terminal = require('toggleterm.terminal').Terminal
