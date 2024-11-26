@@ -5,6 +5,12 @@ return {
   keys = {
     { "<leader>e", mode = "n"},
   },
+  cmd = {
+    "NvimTreeToggle",
+    "NvimTreeOpen",
+    "NvimTreeClose",
+    "NvimTreeFocus",
+  },
   config = function()
     vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>')
 
