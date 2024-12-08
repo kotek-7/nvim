@@ -7,6 +7,7 @@ return {
   {
     "yioneko/nvim-yati",
     lazy = true,
+    event = { "VeryLazy" },
   },
   {
     "nvim-treesitter/nvim-treesitter",
