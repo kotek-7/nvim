@@ -73,3 +73,7 @@ vim.keymap.set('n', '<leader>qq', '<cmd>qa<CR>', { desc = "Quit All" })
 
 -- 設定を開く
 vim.keymap.set("n", "<F1>", "<cmd>e ~/.config/nvim<CR>")
+
+-- 置換
+vim.keymap.set("x", "<leader>r", 'y:%s/<C-r><C-r>"//g<Left><Left>')
+vim.keymap.set("n", "<leader>r", 'yiw:%s/<C-r><C-r>"//g<Left><Left>')
