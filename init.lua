@@ -23,19 +23,14 @@ local opts = {
 }
 
 if vim.g.neovide then
-  print("neovide detected!")
   require("base/neovide_options")
   require("base/neovide_keybinds")
 elseif vim.g.vscode then
-  print("vscode detected!")
   require("base/vscode_options")
   require("base/vscode_keybinds")
   require("lazy").setup("vscode_plugins", opts)
 else
-  print("normal neovim detected!")
   require("base/keybinds")
   require("base/options")
   require("lazy").setup("plugins", opts)
 end
-
-print("init.lua loaded!")
