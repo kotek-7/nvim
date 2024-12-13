@@ -38,3 +38,14 @@ vim.keymap.set('n', '<C-z>', '<NOP>')
 -- 置換
 vim.keymap.set("x", "<leader>r", 'y:%s/<C-r><C-r>"//g')
 vim.keymap.set("n", "<leader>r", 'yiw:%s/<C-r><C-r>"//g')
+
+-- <leader>caでクイックフィックスを開く
+vim.keymap.set("n", "<leader>ca", function()
+    print("quick fix")
+    vscode.action("editor.action.quickFix")
+end)
+
+-- <leader>cfでドキュメントをフォーマット
+vim.keymap.set("n", "<leader>cf", function()
+    vscode.action("editor.action.formatDocument")
+end)
