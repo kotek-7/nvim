@@ -36,15 +36,5 @@ vim.keymap.set('n', '<leader><S-o>', '<S-o><esc>')
 vim.keymap.set('n', '<C-z>', '<NOP>')
 
 -- 置換
--- vim.keymap.set({ "n", "x", "i" }, "<leader>r", function()
---     vscode.with_insert(function()
---         vscode.action("editor.action.addSelectionToNextFindMatch")
---     end)
--- end)
 vim.keymap.set("x", "<leader>r", 'y:%s/<C-r><C-r>"//g')
 vim.keymap.set("n", "<leader>r", 'yiw:%s/<C-r><C-r>"//g')
-
--- open explorer
-vim.keymap.set({ "n", "x", "i" }, "<leader>e", function()
-    vscode.action("workbench.action.toggleSidebarVisibility")
-end)
