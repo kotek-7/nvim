@@ -59,6 +59,9 @@ vim.keymap.set({ 'n', 'v' }, 'p', 'p`]')
 vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('n', 'X', '"_X')
 vim.keymap.set('n', 's', '"_s')
+vim.keymap.set('n', 'S', '"_S')
+vim.keymap.set('n', 'c', '"_c')
+vim.keymap.set('n', 'C', '"_C')
 
 -- 行を追加
 vim.keymap.set('n', '<leader>o', 'o<esc>')

@@ -27,6 +27,9 @@ vim.keymap.set({ 'n', 'v' }, 'p', 'p`]')
 vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('n', 'X', '"_X')
 vim.keymap.set('n', 's', '"_s')
+vim.keymap.set('n', 'S', '"_S')
+vim.keymap.set('n', 'c', '"_c')
+vim.keymap.set('n', 'C', '"_C')
 
 -- 行を追加
 vim.keymap.set('n', '<leader>o', 'o<esc>')
@@ -38,6 +41,10 @@ vim.keymap.set('n', '<C-z>', '<NOP>')
 -- 置換
 vim.keymap.set("x", "<leader>r", 'y:%s/<C-r><C-r>"//g')
 vim.keymap.set("n", "<leader>r", 'yiw:%s/<C-r><C-r>"//g')
+
+-- ctrl-d, ctrl-u
+vim.keymap.set("n", "<C-d>", "20j")
+vim.keymap.set("n", "<C-u>", "20k")
 
 -- <leader>caでクイックフィックスを開く
 vim.keymap.set("n", "<leader>ca", function()
