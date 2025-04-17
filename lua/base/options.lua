@@ -28,5 +28,3 @@ vim.g.sqlite_clib_path = "sqlite3.dll"
 vim.diagnostic.config({
   underline = true
 })
-
-vim.cmd("lan en_us")

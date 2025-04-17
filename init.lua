@@ -34,3 +34,21 @@ else
   require("base/options")
   require("lazy").setup("plugins", opts)
 end
+
+local function file_exists(path)
+  local file = io.open(path, "r")
+  if file then
+    file:close()
+    return true
+  else
+    return false
+  end
+end
+
+if file_exists("base/override_options.lua") then
+  require("base/override_options")
+end
+
+if file_exists("base/override_keybinds.lua") then
+  require("base/override_keybinds")
+end
