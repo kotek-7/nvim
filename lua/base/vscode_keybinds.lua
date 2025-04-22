@@ -6,10 +6,6 @@ vim.g.mapleader = ' ';
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
--- key swap
-vim.keymap.set('n', ';', ':')
-vim.keymap.set('n', ':', ';')
-
 vim.keymap.set("n", "<leader><leader>", "<Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
 
 -- buffer切り替え
@@ -22,6 +18,9 @@ vim.keymap.set('n', 'ZQ', '<NOP>')
 
 -- put後行末に移動
 vim.keymap.set({ 'n', 'v' }, 'p', 'p`]')
+
+-- pをレジスタに登録しない
+vim.keymap.set({ 'n', 'v' }, 'p', '"_dP', { desc = "Paste without yanking" })
 
 -- レジスタに登録しない
 vim.keymap.set('n', 'x', '"_x')

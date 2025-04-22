@@ -13,21 +13,6 @@ vim.keymap.set('n', '<C-Down>', '<C-w>-')
 vim.keymap.set('n', '<C-Left>', '<C-w><')
 vim.keymap.set('n', '<C-Right>', '<C-w>>')
 
-vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
-vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
-
-vim.keymap.set("n", "<c-q>", "<cmd>q<cr>", { desc = "Quit Window" })
-
-vim.keymap.set("n", "<leader>sl", "<cmd>so Session.vim<cr>", { desc = "Load Last Session" })
-
--- Move Lines
-vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
-vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
-vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
-
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
@@ -41,19 +26,15 @@ vim.keymap.set('n', '<right>', 'zl')
 vim.keymap.set('n', '<S-l>', ':bnext<CR>', { silent = true })
 vim.keymap.set('n', '<S-h>', ':bprev<CR>', { silent = true })
 
--- remove buffer
-vim.keymap.set('n', '<A-w>', '<cmd>NvimTreeClose<cr><cmd>bd<cr>', { desc = "Delete buffer" })
-
--- key swap
-vim.keymap.set('n', ';', ':')
-vim.keymap.set('n', ':', ';')
-
 -- ZZ,ZQを無効
 vim.keymap.set('n', 'ZZ', '<NOP>')
 vim.keymap.set('n', 'ZQ', '<NOP>')
 
 -- put後行末に移動
 vim.keymap.set({ 'n', 'v' }, 'p', 'p`]')
+
+-- pをレジスタに登録しない
+vim.keymap.set({ 'n', 'v' }, 'p', '"_dP', { desc = "Paste without yanking" })
 
 -- レジスタに登録しない
 vim.keymap.set('n', 'x', '"_x')
@@ -72,11 +53,3 @@ vim.keymap.set('n', '<C-z>', '<NOP>')
 
 -- 保存
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><cmd>NvimTreeClose<cr><cmd>mks!<cr>", { desc = "Save File" })
-vim.keymap.set('n', '<leader>qq', '<cmd>qa<CR>', { desc = "Quit All" })
-
--- 設定を開く
-vim.keymap.set("n", "<F1>", "<cmd>e ~/.config/nvim<CR>")
-
--- 置換
-vim.keymap.set("x", "<leader>r", 'y:%s/<C-r><C-r>"//g<Left><Left>')
-vim.keymap.set("n", "<leader>r", 'yiw:%s/<C-r><C-r>"//g<Left><Left>')
