@@ -23,7 +23,5 @@ vim.diagnostic.config({
   underline = true
 })
 
-vim.cmd("lan en_us")
-
 local vscode = require('vscode')
 vim.notify = vscode.notify
