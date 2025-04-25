@@ -22,6 +22,14 @@ local opts = {
   }
 }
 
+local uname = vim.loop.os_uname()
+
+if uname.sysname == "Linux" then
+  vim.g.os = "linux"
+elseif uname.sysname == "Windows_NT" then
+  vim.g.os = "windows"
+end
+
 vim.g.slim_mode = true
 
 if vim.g.neovide then

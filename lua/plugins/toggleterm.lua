@@ -15,11 +15,18 @@ return {
 
     vim.keymap.set('n', '<leader>gg', lazygit_toggle, { desc = "Toggle lazygit" })
 
+    local shell = ""
+    if (vim.g.os == "linux") then
+      shell = "zsh"
+    elseif (vim.g.os == "windows") then
+      shell = "pwsh"
+    end
+
     require("toggleterm").setup {
       open_mapping = [[<C-\>]],
       hide_numbers = true,
       direction = "float",
-      shell = "pwsh"
+      shell = shell
     }
   end,
 }
