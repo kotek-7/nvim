@@ -36,17 +36,17 @@ if vim.g.neovide then
   require("base/neovide_options")
   require("base/neovide_keybinds")
 elseif vim.g.vscode then
-  require("base/vscode_options")
   require("base/vscode_keybinds")
   require("lazy").setup("vscode_plugins", opts)
+  require("base/vscode_options")
 elseif vim.g.slim_mode then
-  require("base/slim_options")
   require("base/slim_keybinds")
   require("lazy").setup("slim_plugins", opts)
+  require("base/slim_options")
 else
   require("base/keybinds")
-  require("base/options")
   require("lazy").setup("plugins", opts)
+  require("base/options")
 end
 
 local function file_exists(path)
