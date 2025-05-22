@@ -19,12 +19,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 2
 
--- nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-vim.g.sqlite_clib_path = "sqlite3.dll"
-
 vim.diagnostic.config({
   underline = true
 })
