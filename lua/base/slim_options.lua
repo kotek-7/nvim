@@ -19,7 +19,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 2
 
-vim.cmd "colorscheme gruvbox"
+vim.cmd "colorscheme cyberdream"
 
 vim.diagnostic.config({
   underline = true
